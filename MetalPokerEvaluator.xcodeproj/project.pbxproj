@@ -13,6 +13,8 @@
 		2D922FAE21359E2000B2F244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D922FAD21359E2000B2F244 /* Assets.xcassets */; };
 		2D922FB121359E2000B2F244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D922FAF21359E2000B2F244 /* LaunchScreen.storyboard */; };
 		2D922FBC21359E2000B2F244 /* MetalPokerEvaluatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FBB21359E2000B2F244 /* MetalPokerEvaluatorTests.swift */; };
+		2D922FCA2135A57300B2F244 /* CardMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FC92135A57300B2F244 /* CardMask.swift */; };
+		2D922FCC2135B39A00B2F244 /* CardMaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		2D922FC62135A16800B2F244 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2D922FC72135A2CF00B2F244 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2D922FC82135A2D000B2F244 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2D922FC92135A57300B2F244 /* CardMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMask.swift; sourceTree = "<group>"; };
+		2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMaskTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				2D922FAD21359E2000B2F244 /* Assets.xcassets */,
 				2D922FAF21359E2000B2F244 /* LaunchScreen.storyboard */,
 				2D922FB221359E2000B2F244 /* Info.plist */,
+				2D922FC92135A57300B2F244 /* CardMask.swift */,
 			);
 			path = MetalPokerEvaluator;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		2D922FBA21359E2000B2F244 /* MetalPokerEvaluatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */,
 				2D922FBB21359E2000B2F244 /* MetalPokerEvaluatorTests.swift */,
 				2D922FBD21359E2000B2F244 /* Info.plist */,
 			);
@@ -204,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D922FA921359E1C00B2F244 /* ViewController.swift in Sources */,
+				2D922FCA2135A57300B2F244 /* CardMask.swift in Sources */,
 				2D922FA721359E1C00B2F244 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D922FBC21359E2000B2F244 /* MetalPokerEvaluatorTests.swift in Sources */,
+				2D922FCC2135B39A00B2F244 /* CardMaskTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
