@@ -55,29 +55,28 @@ extension CardMask {
         for (rankCharacter, suitCharacter) in characterPairs {
             let rank: CardMask
             switch rankCharacter {
-            case "2"      : rank = CardMask.TWOS
-            case "3"      : rank = CardMask.THREES
-            case "4"      : rank = CardMask.FOURS
-            case "5"      : rank = CardMask.FIVES
-            case "6"      : rank = CardMask.SIXES
-            case "7"      : rank = CardMask.SEVENS
-            case "8"      : rank = CardMask.EIGHTS
-            case "9"      : rank = CardMask.NINES
-            case "T", "t" : rank = CardMask.TENS
-            case "J", "j" : rank = CardMask.JACKS
-            case "Q", "q" : rank = CardMask.QUEENS
-            case "K", "k" : rank = CardMask.KINGS
-            case "A", "a" : rank = CardMask.ACES
-            default       : rank = 0
-                return nil
-                }
+                case "2"      : rank = CardMask.TWOS
+                case "3"      : rank = CardMask.THREES
+                case "4"      : rank = CardMask.FOURS
+                case "5"      : rank = CardMask.FIVES
+                case "6"      : rank = CardMask.SIXES
+                case "7"      : rank = CardMask.SEVENS
+                case "8"      : rank = CardMask.EIGHTS
+                case "9"      : rank = CardMask.NINES
+                case "T", "t" : rank = CardMask.TENS
+                case "J", "j" : rank = CardMask.JACKS
+                case "Q", "q" : rank = CardMask.QUEENS
+                case "K", "k" : rank = CardMask.KINGS
+                case "A", "a" : rank = CardMask.ACES
+                default       : rank = 0
+            }
             let suit: CardMask
             switch suitCharacter {
-            case "c", "C" : suit = CardMask.CLUBS
-            case "d", "D" : suit = CardMask.DIAMONDS
-            case "h", "H" : suit = CardMask.HEARTS
-            case "s", "S" : suit = CardMask.SPADES
-            default       : suit = 0
+                case "c", "C" : suit = CardMask.CLUBS
+                case "d", "D" : suit = CardMask.DIAMONDS
+                case "h", "H" : suit = CardMask.HEARTS
+                case "s", "S" : suit = CardMask.SPADES
+                default       : suit = 0
             }
             if rank == 0 || suit == 0 {
                 print("CardMask cannot be initialized with \"\(cardString)\".\n\"\(rankCharacter)\(suitCharacter)\" is not a valid card.")
