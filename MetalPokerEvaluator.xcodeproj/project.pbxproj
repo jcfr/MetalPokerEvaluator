@@ -16,6 +16,9 @@
 		2D922FCA2135A57300B2F244 /* CardMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FC92135A57300B2F244 /* CardMask.swift */; };
 		2D922FCC2135B39A00B2F244 /* CardMaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */; };
 		2D922FCF2135B9FD00B2F244 /* HandScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FCE2135B9FD00B2F244 /* HandScore.swift */; };
+		2D922FD12135BD0300B2F244 /* MetalPokerEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FD02135BD0300B2F244 /* MetalPokerEvaluator.swift */; };
+		2D922FD32135BDA700B2F244 /* score.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FD22135BDA700B2F244 /* score.metal */; };
+		2D922FD52135BE5000B2F244 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FD42135BE5000B2F244 /* TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		2D922FC92135A57300B2F244 /* CardMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMask.swift; sourceTree = "<group>"; };
 		2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMaskTests.swift; sourceTree = "<group>"; };
 		2D922FCE2135B9FD00B2F244 /* HandScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandScore.swift; sourceTree = "<group>"; };
+		2D922FD02135BD0300B2F244 /* MetalPokerEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPokerEvaluator.swift; sourceTree = "<group>"; };
+		2D922FD22135BDA700B2F244 /* score.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = score.metal; sourceTree = "<group>"; };
+		2D922FD42135BE5000B2F244 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,8 @@
 			children = (
 				2D922FC92135A57300B2F244 /* CardMask.swift */,
 				2D922FCE2135B9FD00B2F244 /* HandScore.swift */,
+				2D922FD02135BD0300B2F244 /* MetalPokerEvaluator.swift */,
+				2D922FD22135BDA700B2F244 /* score.metal */,
 				2D922FA621359E1C00B2F244 /* AppDelegate.swift */,
 				2D922FA821359E1C00B2F244 /* ViewController.swift */,
 				2D922FAA21359E1C00B2F244 /* Main.storyboard */,
@@ -104,6 +112,7 @@
 		2D922FBA21359E2000B2F244 /* MetalPokerEvaluatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				2D922FD42135BE5000B2F244 /* TestHelpers.swift */,
 				2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */,
 				2D922FBB21359E2000B2F244 /* MetalPokerEvaluatorTests.swift */,
 				2D922FBD21359E2000B2F244 /* Info.plist */,
@@ -214,8 +223,10 @@
 			files = (
 				2D922FA921359E1C00B2F244 /* ViewController.swift in Sources */,
 				2D922FCF2135B9FD00B2F244 /* HandScore.swift in Sources */,
+				2D922FD32135BDA700B2F244 /* score.metal in Sources */,
 				2D922FCA2135A57300B2F244 /* CardMask.swift in Sources */,
 				2D922FA721359E1C00B2F244 /* AppDelegate.swift in Sources */,
+				2D922FD12135BD0300B2F244 /* MetalPokerEvaluator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +236,7 @@
 			files = (
 				2D922FBC21359E2000B2F244 /* MetalPokerEvaluatorTests.swift in Sources */,
 				2D922FCC2135B39A00B2F244 /* CardMaskTests.swift in Sources */,
+				2D922FD52135BE5000B2F244 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

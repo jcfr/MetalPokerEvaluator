@@ -3,26 +3,26 @@ import XCTest
 
 class MetalPokerEvaluatorTests: XCTestCase {
     
+    var evaluator: MetalPokerEvaluator!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        evaluator = MetalPokerEvaluator()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        evaluator = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCanInitialize() {
+        XCTAssertNotNil(evaluator)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test5CardHandRankCounts() {
+        let scores = evaluator.score(hands: all5CardHands)
+        let rankCounts = countRanks(scores: scores)
+        XCTAssertEqual(rankCounts, correct5CardRankCounts)
     }
     
 }
