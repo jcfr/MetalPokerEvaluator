@@ -15,6 +15,7 @@
 		2D922FBC21359E2000B2F244 /* MetalPokerEvaluatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FBB21359E2000B2F244 /* MetalPokerEvaluatorTests.swift */; };
 		2D922FCA2135A57300B2F244 /* CardMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FC92135A57300B2F244 /* CardMask.swift */; };
 		2D922FCC2135B39A00B2F244 /* CardMaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */; };
+		2D922FCF2135B9FD00B2F244 /* HandScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D922FCE2135B9FD00B2F244 /* HandScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		2D922FC82135A2D000B2F244 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2D922FC92135A57300B2F244 /* CardMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMask.swift; sourceTree = "<group>"; };
 		2D922FCB2135B39A00B2F244 /* CardMaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMaskTests.swift; sourceTree = "<group>"; };
+		2D922FCE2135B9FD00B2F244 /* HandScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +89,14 @@
 		2D922FA521359E1C00B2F244 /* MetalPokerEvaluator */ = {
 			isa = PBXGroup;
 			children = (
+				2D922FC92135A57300B2F244 /* CardMask.swift */,
+				2D922FCE2135B9FD00B2F244 /* HandScore.swift */,
 				2D922FA621359E1C00B2F244 /* AppDelegate.swift */,
 				2D922FA821359E1C00B2F244 /* ViewController.swift */,
 				2D922FAA21359E1C00B2F244 /* Main.storyboard */,
 				2D922FAD21359E2000B2F244 /* Assets.xcassets */,
 				2D922FAF21359E2000B2F244 /* LaunchScreen.storyboard */,
 				2D922FB221359E2000B2F244 /* Info.plist */,
-				2D922FC92135A57300B2F244 /* CardMask.swift */,
 			);
 			path = MetalPokerEvaluator;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D922FA921359E1C00B2F244 /* ViewController.swift in Sources */,
+				2D922FCF2135B9FD00B2F244 /* HandScore.swift in Sources */,
 				2D922FCA2135A57300B2F244 /* CardMask.swift in Sources */,
 				2D922FA721359E1C00B2F244 /* AppDelegate.swift in Sources */,
 			);

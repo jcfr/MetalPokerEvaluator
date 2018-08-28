@@ -1,6 +1,6 @@
 import Foundation
 
-public typealias CardMask = UInt64
+typealias CardMask = UInt64
 
 // 4 x 16-bit words
 // ...AKQJT98765432 ...AKQJT98765432 ...AKQJT98765432 ...AKQJT98765432
