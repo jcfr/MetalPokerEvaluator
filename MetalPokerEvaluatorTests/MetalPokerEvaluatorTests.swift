@@ -25,4 +25,10 @@ class MetalPokerEvaluatorTests: XCTestCase {
         XCTAssertEqual(rankCounts, correct5CardRankCounts)
     }
     
+    func test5CardHandRankPerformance() {
+        measure {
+            let _ = evaluator.score(hands: all5CardHands)
+        }
+    }
+    
 }
