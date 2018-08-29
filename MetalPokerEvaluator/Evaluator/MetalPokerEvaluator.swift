@@ -17,53 +17,92 @@ class MetalPokerEvaluator {
         self.pipeline = pipeline
     }
     
-    func score(hands: [CardMask]) -> [HandScore] {
+    func dispatchScoreCommand(
+        handsBuffer: MTLBuffer,
+        scoresBuffer: MTLBuffer,
+        count: Int) -> MTLCommandBuffer? {
+        
+        // Initialize one-off command queue and encoder
         guard let commandBuffer = commandQueue
-            .makeCommandBuffer() else { return [] }
+            .makeCommandBuffer() else { return nil }
         guard let commandEncoder = commandBuffer
-            .makeComputeCommandEncoder() else { return [] }
-        let device = commandQueue.device
-        guard let handsBuffer = device.makeBuffer(
-            bytes: UnsafeRawPointer(hands),
-            length: MemoryLayout<CardMask>.stride * hands.count,
-            options: []
-            ) else { return [] }
-        guard let scoresBuffer = device.makeBuffer(
-            length: MemoryLayout<HandScore>.stride * hands.count,
-            options: []
-            ) else { return [] }
+            .makeComputeCommandEncoder() else { return nil }
         commandEncoder.setComputePipelineState(pipeline)
+
+        // Set buffer pointers
         commandEncoder.setBuffer(handsBuffer, offset: 0, index: 0)
         commandEncoder.setBuffer(scoresBuffer, offset: 0, index: 1)
-        var threadCount = CUnsignedInt(hands.count)
+        
+        // Set variables
+        var threadCount = CUnsignedInt(count)
         commandEncoder.setBytes(
             &threadCount,
             length: MemoryLayout<CUnsignedInt>.size,
             index: 2
         )
+
+        // Calculate optimal execution threadgroup size and grid size
         let w = pipeline.threadExecutionWidth
+        // TODO: Benchmark larger threadgroups
+        // let h = pipeline.maxTotalThreadsPerThreadgroup / w
         let threadsPerThreadgroup = MTLSize(
             width: w,
             height: 1,
             depth: 1
         )
         let threadgroupsPerGrid = MTLSize(
-            width: (Int(threadCount) + w - 1) / w,
+            width: (count + w - 1) / w,
             height: 1,
             depth: 1
         )
+
+        // Dispatch execution request
         commandEncoder.dispatchThreadgroups(
             threadgroupsPerGrid,
-            threadsPerThreadgroup: threadsPerThreadgroup
-        )
+            threadsPerThreadgroup: threadsPerThreadgroup)
         commandEncoder.endEncoding()
         commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
-        let scores = UnsafeBufferPointer<HandScore>(
-            start: scoresBuffer.contents()
-                .assumingMemoryBound(to: HandScore.self),
-            count: Int(threadCount)
+        
+        // Return queued command buffer
+        return commandBuffer
+    }
+    
+    func makeHandsBuffer(hands: [CardMask]) -> MTLBuffer? {
+        return commandQueue.device.makeBuffer(
+            bytes: UnsafeRawPointer(hands),
+            length: MemoryLayout<CardMask>.stride * hands.count,
+            options: []
         )
-        return [HandScore](scores)
+    }
+    
+    func makeScoreBuffer(count: Int) -> MTLBuffer? {
+        return commandQueue.device.makeBuffer(
+            length: MemoryLayout<HandScore>.stride * count,
+            options: []
+        )
+    }
+    
+    func makeScoresArray(scoresBuffer: MTLBuffer, count: Int) -> [HandScore] {
+        let scoresPointer = scoresBuffer
+            .contents()
+            .assumingMemoryBound(to: HandScore.self)
+        let scoresBufferPointer = UnsafeBufferPointer(
+            start: scoresPointer,
+            count: count
+        )
+        return [HandScore](scoresBufferPointer)
+    }
+    
+    func score(hands: [CardMask]) -> [HandScore] {
+        guard let handsBuffer = makeHandsBuffer(hands: hands) else { return [] }
+        guard let scoresBuffer = makeScoreBuffer(count: hands.count) else { return [] }
+        guard let commandBuffer = dispatchScoreCommand(
+            handsBuffer: handsBuffer,
+            scoresBuffer: scoresBuffer,
+            count: hands.count
+            ) else { return [] }
+        commandBuffer.waitUntilCompleted()
+        let scores = makeScoresArray(scoresBuffer: scoresBuffer, count: hands.count)
+        return scores
     }
 }
