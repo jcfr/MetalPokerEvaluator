@@ -4,7 +4,7 @@ typealias CardMask = UInt64
 
 // 4 x 16-bit words
 // ...AKQJT98765432 ...AKQJT98765432 ...AKQJT98765432 ...AKQJT98765432
-//           spades           hearts         diamonds            clubs
+//            clubs         diamonds           hearts           spades
 
 extension CardMask {
     

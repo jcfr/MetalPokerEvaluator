@@ -95,10 +95,7 @@
 		2D922FA521359E1C00B2F244 /* MetalPokerEvaluator */ = {
 			isa = PBXGroup;
 			children = (
-				2D922FC92135A57300B2F244 /* CardMask.swift */,
-				2D922FCE2135B9FD00B2F244 /* HandScore.swift */,
-				2D922FD02135BD0300B2F244 /* MetalPokerEvaluator.swift */,
-				2D922FD22135BDA700B2F244 /* score.metal */,
+				2DC45BCA2137367B002C824A /* Evaluator */,
 				2D922FA621359E1C00B2F244 /* AppDelegate.swift */,
 				2D922FA821359E1C00B2F244 /* ViewController.swift */,
 				2D922FAA21359E1C00B2F244 /* Main.storyboard */,
@@ -118,6 +115,17 @@
 				2D922FBD21359E2000B2F244 /* Info.plist */,
 			);
 			path = MetalPokerEvaluatorTests;
+			sourceTree = "<group>";
+		};
+		2DC45BCA2137367B002C824A /* Evaluator */ = {
+			isa = PBXGroup;
+			children = (
+				2D922FC92135A57300B2F244 /* CardMask.swift */,
+				2D922FCE2135B9FD00B2F244 /* HandScore.swift */,
+				2D922FD02135BD0300B2F244 /* MetalPokerEvaluator.swift */,
+				2D922FD22135BDA700B2F244 /* score.metal */,
+			);
+			path = Evaluator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

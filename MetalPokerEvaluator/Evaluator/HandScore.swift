@@ -25,6 +25,7 @@ public typealias HandScore = UInt64
 
 extension HandScore {
     
+    // hand ranks
     static let
     HIGH_CARD       : HandScore = 0,
     ONE_PAIR        : HandScore = 0x100000000,
