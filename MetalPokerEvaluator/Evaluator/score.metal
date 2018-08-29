@@ -238,7 +238,7 @@ uint2 score(uint2 hand2) {
 }
 
 kernel
-void scoreKernal(const device uint2* hands[[buffer(0)]],
+void scoreKernel(const device uint2* hands[[buffer(0)]],
                  device uint2* scores[[buffer(1)]],
                  const device uint& threadCount [[ buffer(2) ]],
                  const uint t [[thread_position_in_grid]]) {

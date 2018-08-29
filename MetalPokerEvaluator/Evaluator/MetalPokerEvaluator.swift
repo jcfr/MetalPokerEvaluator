@@ -11,7 +11,7 @@ class MetalPokerEvaluator {
         self.commandQueue = commandQueue
         guard let library = device.makeDefaultLibrary() else { return nil }
         guard let function = library
-            .makeFunction(name: "scoreKernal") else { return nil }
+            .makeFunction(name: "scoreKernel") else { return nil }
         guard let pipeline = try? device
             .makeComputePipelineState(function: function) else { return nil }
         self.pipeline = pipeline
