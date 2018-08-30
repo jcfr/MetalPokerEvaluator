@@ -37,7 +37,7 @@ func countRanks(scores: [HandScore]) -> [Int] {
 let correct5CardRankCounts = [
     1302540, // high card
     1098240, // one pair
-    123552,  // two pair
+    123552,  // two pairs
     54912,   // three of a kind
     10200,   // straight
     5108,    // flush
@@ -49,11 +49,11 @@ let correct5CardRankCounts = [
 let correct7CardRankCounts = [
     23294460, // high card
     58627800, // one pair
-    31433400, // two pair
+    31433400, // two pairs
     6461620,  // three of a kind
     6180020,  // straight
     4047644,  // flush
     3473184,  // full house
     224848,   // four of a kind
-    41584     // striaght flush
+    41584     // straight flush
 ]
